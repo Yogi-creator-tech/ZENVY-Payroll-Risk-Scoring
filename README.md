@@ -73,10 +73,4 @@ Gradient Boosting was selected as the **final model** because:
 ✔ Model justification  
 ✔ Data-driven payroll analytics
 
-## 🚀 Future Enhancements
 
-• Add more behavioural features such as performance metrics
-• Include time-series trend analysis of absenteeism
-• Deploy model as a web-based risk scoring tool
-• Add SHAP / LIME explainability insights
-• Train on larger real-world payroll datasets

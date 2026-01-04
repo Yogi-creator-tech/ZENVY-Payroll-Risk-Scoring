@@ -1,76 +1,88 @@
-# Payroll Risk Scoring System (ZENVY)
+# Payroll Absenteeism Risk Prediction — Machine Learning Project
 
-This project develops a Payroll Risk Scoring model using engineered behavioural
-features derived from employee absenteeism patterns and salary change indicators.
+This project builds a supervised Machine Learning model to predict employees who are likely to fall under the **High Absentee** category using workforce, commute and lifestyle attributes from an absenteeism dataset.
 
-The objective of the system is to identify **high-risk payroll records** that may
-indicate anomalies such as excessive absenteeism, irregular salary revisions or
-manual payroll adjustments.
+The objective is to support HR and payroll teams by identifying employees with a higher probability of frequent absentee behaviour, enabling better workforce planning and attendance risk monitoring.
 
 ---
 
 ## 🏗 Project Workflow
 
-1️⃣ Exploratory Data Analysis & Cleaning  
-2️⃣ Feature Engineering (attendance & salary based features)  
-3️⃣ Risk Label Creation (rule-based classification)  
-4️⃣ Correlation & Behavioural Pattern Analysis  
-5️⃣ Model Training with Hyperparameter Tuning  
-6️⃣ Model Comparison & Mathematical Justification  
-7️⃣ Feature Importance Interpretation
+1) Data Cleaning & Handling Missing Values  
+2) Exploratory Data Analysis (EDA) with visualisations  
+3) Target Creation — High vs Low Absentee Employees  
+4) Feature Selection (no target leakage)  
+5) Train–Test Split & Standardisation  
+6) Machine Learning Model Training  
+7) Model Performance Comparison  
+8) Feature Importance Interpretation & Insights  
 
 ---
 
-## 🧠 Engineered Features
+## 🎯 Target Definition
 
-| Feature | Meaning |
-|--------|--------|
-| absence_ratio | Absenteeism hours relative to service time |
-| high_absence_flag | Frequent / long-duration absenteeism indicator |
-| salary_change_pct | Salary revision percentage behaviour |
+Employees are labelled as:
 
-These features capture behavioural risk signals not visible in raw payroll data.
+- **1 = High Absentee**
+- **0 = Low Absentee**
+
+based on whether their total absenteeism hours are **greater than the median value** in the dataset.
+
+This creates a realistic and balanced binary classification problem.
 
 ---
 
 ## 🤖 Machine Learning Models Evaluated
 
-• SVM (RBF Kernel)  
-• Random Forest (Tuned)  
-• Gradient Boosting (Tuned)
+- Logistic Regression  
+- Random Forest Classifier  
+- K-Nearest Neighbors (KNN)
 
-Gradient Boosting was selected as the **final model** because:
+Models were evaluated using:
 
-✔ Strong ROC-AUC performance  
-✔ Lower variance vs Random Forest  
-✔ Better generalisation on behavioural risk patterns  
-✔ Suitable for risk scoring systems
+- Accuracy  
+- Precision  
+- Recall  
+- F1-Score  
+- ROC-AUC Score  
 
----
-
-## 📊 Key Insights
-
-✔ Absence ratio is the strongest risk indicator  
-✔ Unusual salary change % contributes to payroll anomalies  
-✔ Frequent absenteeism increases risk probability  
-✔ Risk behaviour is driven by **attendance + salary behaviour together**
+**Random Forest** achieved the best overall performance and was selected as the final model due to its stronger generalisation capability and ability to capture non-linear behaviour patterns.
 
 ---
 
-## 📂 Repository Contents
+## 📊 Feature Importance — Key Insights
 
-• Jupyter Notebook — Payroll Risk Scoring System  
-• Dataset used for modelling  
-• Model comparison & feature importance analysis
+Important predictors influencing absentee risk include:
+
+- Transportation Expense  
+- Body Mass Index (BMI)  
+- Service Time  
+- Age  
+- Distance from Residence to Work  
+
+**Interpretation**
+
+- Higher commute cost / distance is associated with increased absentee likelihood  
+- BMI and health-related indicators contribute to absence behaviour  
+- Employees with longer tenure generally show more stable attendance patterns  
+
+These insights provide practical value for:
+
+- commute support or flexibility initiatives  
+- employee wellness and health monitoring  
+- attendance guidance for early-tenure employees  
 
 ---
 
-### 🚀 This project demonstrates:
+## 🚀 Skills Demonstrated
 
-✔ Feature engineering  
-✔ Risk modelling  
-✔ Hyperparameter tuning  
-✔ Model justification  
-✔ Data-driven payroll analytics
+- Data Cleaning & Preprocessing  
+- Exploratory Data Analysis (EDA)  
+- Feature Selection & Scaling  
+- Supervised ML Model Training  
+- Performance Evaluation & Comparison  
+- Feature Importance Interpretation  
+- Business Insight Reporting  
 
+---
 
